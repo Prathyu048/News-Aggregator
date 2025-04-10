@@ -19,7 +19,7 @@ const NewsBoard = ({ category, searchQuery }) => {
     ? articles.filter(article =>
         article.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
-    : articles;
+    : articles || [];
 
   return (
     <div>
