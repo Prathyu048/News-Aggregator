@@ -1,0 +1,174 @@
+.nav-link{
+    color: rgb(248, 245, 241);
+    cursor: pointer;
+}
+@media (min-width: 992px) {
+  .navbar-nav {
+    
+    align-items: center;
+  }
+
+  .search-inner{
+    display: flex;
+    justify-self:flex-end;
+    
+  }
+  .inner-input{
+     display: flex;
+     justify-content: flex-end;
+  
+  }
+  .search-container{
+    margin-left: 410px;
+  }
+  .navbar-nav {
+    
+    margin-right:0px;
+  }
+
+  .navbar-collapse .d-flex {
+    justify-content: flex-end;
+  }
+
+  
+
+}
+@media (max-width: 991.98px) {
+  .navbar-brand {
+    margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .navbar-collapse.show + .container {
+    margin-top: 300px;
+  }
+  .navbar-collapse .d-flex {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    
+  }
+
+  .navbar-collapse {
+    background-color: #212529;
+    padding: 1rem;
+    
+    flex-direction: column;
+    align-items: flex-start;
+    width:100% /* 👈 Align content to start */
+  }
+  .navbar-collapse .navbar-nav {
+    width: 100%;
+  }
+  .navbar-nav {
+    width: 100%;
+    
+  }
+
+  .navbar-nav .nav-link {
+    color: white;
+    font-size: 14px;
+    padding: 10px 0;
+    text-align: left;
+  }
+  #searchInput {
+    width: 100% !important;
+  }
+  .fancy-btn {
+    width: 100%; /* full width button in mobile */
+    text-align: left; /* Optional */
+  }
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    flex-direction: column;
+  
+    justify-content: center;
+    z-index: 1030; /* default Bootstrap navbar z-index */
+  position: relative; 
+  }
+ 
+  .navbar-collapse {
+    background-color: #212529; 
+    padding: 1rem;/* match your navbar bg color */
+  }
+  
+  /* Optional: match the dropdown link color if needed */
+  .navbar-nav .nav-link {
+    color: white;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #adb5bd; /* Optional hover color */
+  }
+  .nav-link {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+  
+  .small-navbar, .d-flex {
+    flex-direction: column;
+    gap: 5px;
+    margin: 5px 0;
+  }
+  
+  .fancy-btn {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+.small-navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.small-navbar .nav-link,
+.small-navbar .navbar-brand {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.9rem;
+ 
+}
+.navbar{
+  height: 65px;
+}
+.navbar .nav-link:hover {
+    color: rgb(150, 148, 148) !important;
+  }
+  .d-flex{
+    gap: 10px;
+    height: 50px;
+    
+  }
+button{
+    color: white;
+}
+.fancy-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.fancy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #5f79f2, #9e5fe0);
+}
+
+.fancy-btn:active {
+  transform: scale(0.98);
+}
