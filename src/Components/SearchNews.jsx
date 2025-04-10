@@ -6,25 +6,21 @@ const SearchNews = ({ setSearchedArticles }) => {
   
 
   const handleSearch = async () => {
-    const apiKey = import.meta.env.VITE_API_KEY;
-    if (!apiKey) {
-      alert('API key missing!');
-      return;
-    }
     if (!query.trim()) {
       alert('Please enter a search term!');
       return;
     }
-    const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&apiKey=${apiKey}`;
+  
     try {
-      const res = await fetch(url);
+      const res = await fetch(`/api/news?query=${encodeURIComponent(query)}`);
       const data = await res.json();
       setSearchedArticles(data.articles || []);
     } catch (error) {
       console.error('Error fetching news:', error);
-  
+      alert('Something went wrong while searching for news.');
     }
   };
+  
 
   return (
     <div className="d-flex ms-lg-auto mt-2 mt-lg-0 inner-input">
