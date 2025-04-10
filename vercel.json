@@ -1,19 +1,15 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "api/news.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "index.html",
-        "use": "@vercel/static"
+    "functions": {
+      "api/**/*.js": {
+        "runtime": "nodejs18.x"
       }
-    ],
-   "functions": {
-  "api/**/*.js": {
-    "runtime": "nodejs@18"
-  }
-}
+    },
+    "rewrites": [
+      {
+        "source": "/api/news",
+        "destination": "/api/news.js"
+      }
+    ]
   }
   
