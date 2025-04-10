@@ -6,11 +6,18 @@ const NewsBoard = ({ category, searchQuery }) => {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      let url = `/api/news?category=${category}`;
-      const response = await fetch(url);
-      const data = await response.json();
-      setArticles(data.articles);
+      const apiKey = import.meta.env.VITE_API_KEY;
+      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`;
+    
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        setArticles(data.articles || []);
+      } catch (error) {
+        console.error('Error fetching articles:', error);
+      }
     };
+    
 
     fetchArticles();
   }, [category]);
