@@ -10,11 +10,12 @@
         "use": "@vercel/static"
       }
     ],
-    "functions": {
-      "api/**/*.js": {
-        "runtime": "nodejs18.x"
-      }
-    },
+   "functions": {
+  "api/**/*.js": {
+    "runtime": "nodejs@18"
+  }
+},
+
     "rewrites": [
       {
         "source": "/api/news",
