@@ -14,13 +14,6 @@
   "api/**/*.js": {
     "runtime": "nodejs@18"
   }
-},
-
-    "rewrites": [
-      {
-        "source": "/api/news",
-        "destination": "/api/news.js"
-      }
-    ]
+}
   }
   
