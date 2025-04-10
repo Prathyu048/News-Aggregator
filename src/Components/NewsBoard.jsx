@@ -6,12 +6,20 @@ const NewsBoard = ({ category, searchQuery }) => {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
-      const response = await fetch(url);
+      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
+      
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Origin': 'http://localhost:5173', // or whatever port your local dev server runs on
+          'Referer': 'http://localhost:5173'
+        }
+      });
+    
       const data = await response.json();
       setArticles(data.articles);
     };
-
+    
     fetchArticles();
   }, [category]);
 
