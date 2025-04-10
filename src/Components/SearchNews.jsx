@@ -15,7 +15,7 @@ const SearchNews = ({ setSearchedArticles }) => {
       alert('Please enter a search term!');
       return;
     }
-    const url = `http://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&apiKey=${apiKey}`;
+    const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&apiKey=${apiKey}`;
     try {
       const res = await fetch(url);
       const data = await res.json();
